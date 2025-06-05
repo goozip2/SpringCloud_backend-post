@@ -21,11 +21,14 @@ public class PostController {
     private final PostService postService;
 
     @PostMapping(value = "/post")
-    public ApiResponseDto<String> createPost(@RequestBody @Valid PostCreateDto dto) {postService.createPost(dto);
+    public ApiResponseDto<String> createPost(@RequestBody @Valid PostCreateDto dto) {
+        postService.createPost(dto);
         return ApiResponseDto.defaultOk();
     }
+
     @PostMapping(value = "/post/comment")
-    public ApiResponseDto<String> addComment(@RequestBody @Valid PostCommentCreateDto dto) {postService.addPostComment(dto);
+    public ApiResponseDto<String> addComment(@RequestBody @Valid PostCommentCreateDto dto) {
+        postService.addPostComment(dto);
         return ApiResponseDto.defaultOk();
     }
 }
